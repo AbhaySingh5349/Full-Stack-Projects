@@ -2,4 +2,5 @@
 
 module.exports.toursController = require('./tours.controller');
 module.exports.authController = require('./auth.controller');
-module.exports.usersController = require('./users.controller');
+module.exports.usersController = require('./user.controller');
+module.exports.reviewsController = require('./review.controller');

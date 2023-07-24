@@ -45,7 +45,11 @@ const fetchAllTours = async (req) => {
 };
 
 const fetchTourById = async (id) => {
-  const tour = await Tour.findById(id);
+  const tour = await Tour.findById(id).populate({
+    path: 'reviews',
+    select: 'review',
+  });
+
   if (!tour) {
     throw new apiError.APIErrorClass(404, `No tour with id:${id} found`);
   }
