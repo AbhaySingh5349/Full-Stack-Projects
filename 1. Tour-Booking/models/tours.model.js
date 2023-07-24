@@ -79,22 +79,63 @@ const tourSchema = mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    startLocation: {
+      // GeoJSON (to represent Geospatial data)
+      type: {
+        type: String,
+        default: 'Point',
+        enum: ['Point'],
+      },
+      coordinates: [Number],
+      address: String,
+      description: String,
+    },
+    // embedding all locations document in Tour document
+    locations: [
+      {
+        type: {
+          type: String,
+          default: 'Point',
+          enum: ['Point'],
+        },
+        coordinates: [Number],
+        address: String,
+        description: String,
+        day: Number, // day of tour on which people will go to this location
+      },
+    ],
+    guides: [
+      // Child referencing
+      // tours & users will be separated entities, we just need to have reference to id's of guides for that specific tour
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+      },
+    ],
     createdAt: {
       type: Date,
       default: Date.now(),
     },
   },
   {
-    // options
+    // options: when we have virtual property(field not stored in db, but cal. using other value), we need to make them visible
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
   },
 );
 
-// fileds which we can define on our schema but they will not be persisted in db (as they can be derived from one another)
+// fieLds which we can define on our schema but they will not be persisted in db (as they can be derived from one another)
 // we used regular func as => func do not have its own 'this' keyword
 tourSchema.virtual('durationWeeks').get(function () {
   return this.duration / 7;
+});
+
+// Virtual populate (keeping array of 'review ids' like in child referencing but without actually persisting to db)
+tourSchema.virtual('reviews', {
+  // populate this field in controller, since we only need for particular 'id' & not for all find operations
+  ref: 'Review',
+  foreignField: 'tour', // field name of schema in child model
+  localField: '_id', // property by which we are accessing schema in child model
 });
 
 // DOCUMENT MIDDLEWARE (this object points to document)
@@ -114,6 +155,13 @@ tourSchema.pre('save', function (next) {
 // runs before any 'find' query is executed
 tourSchema.pre(/^find/, function (next) {
   this.find({ secretTour: { $ne: true } }); // hiding 'secret tour' from normal users
+
+  // child reference for guides in Tour schema
+  this.populate({
+    path: 'guides',
+    select: '-passwordChangedTimestamp -createdAt -__v',
+  });
+
   next();
 });
 

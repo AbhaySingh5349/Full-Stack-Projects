@@ -15,6 +15,7 @@ const getAllUsers = async () => {
 };
 
 const getUserByEmail = async (email) => {
+  console.log('EMAIL: ', email);
   const user = await User.findOne({ email }).select('+password'); // since we need password with user object for validating against current i/p password
   if (!user) {
     throw new apiError.APIErrorClass(
@@ -26,10 +27,7 @@ const getUserByEmail = async (email) => {
   return user;
 };
 
-const getUserById = async (req, id) => {
-  if (!req?.user) {
-    throw new apiError.APIErrorClass(401, req?.authMessage ?? 'error');
-  }
+const getUserById = async (id) => {
   const user = await User.findById({ _id: id }).select('+password');
   if (!user) {
     throw new apiError.APIErrorClass(404, `User not found with id: ${id}`);

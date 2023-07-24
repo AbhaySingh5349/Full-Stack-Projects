@@ -10,18 +10,24 @@ router.get('/', userController.getAllUsers);
 router.post('/forgotPassword', userController.forgotPassword);
 
 // receives token & new password
-router
-  .patch('/resetPassword/:resetToken', userController.resetPassword)
-  .patch(
-    '/updatePassword',
-    authMiddleware.verifyToken,
-    userController.updatePassword,
-  )
-  .patch('/updateData', authMiddleware.verifyToken, userController.updateData)
-  .delete(
-    '/deactivateAccount',
-    authMiddleware.verifyToken,
-    userController.deactivateAccount,
-  );
+router.patch('/resetPassword/:resetToken', userController.resetPassword);
+
+router.patch(
+  '/updatePassword',
+  authMiddleware.verifyToken,
+  userController.updatePassword,
+);
+
+router.patch(
+  '/updateData',
+  authMiddleware.verifyToken,
+  userController.updateData,
+);
+
+router.delete(
+  '/deactivateAccount',
+  authMiddleware.verifyToken,
+  userController.deactivateAccount,
+);
 
 module.exports = router;

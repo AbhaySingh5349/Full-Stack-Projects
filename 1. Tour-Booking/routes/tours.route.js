@@ -1,6 +1,7 @@
 const express = require('express');
 const toursController = require('../controllers/tours.controller');
 const { toursMiddleware, authMiddleware } = require('../middlewares');
+const reviewsRouter = require('./review.route');
 
 const router = express.Router();
 
@@ -30,5 +31,8 @@ router
     authMiddleware.verifyAuthorization('admin', 'lead-guide'),
     toursController.deleteTourWithId,
   );
+
+// nested route
+router.use('/:tourId/reviews', reviewsRouter);
 
 module.exports = router;

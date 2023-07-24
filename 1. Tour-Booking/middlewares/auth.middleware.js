@@ -72,13 +72,11 @@ const verifyAuthorization = (...restrictedRoles) => {
   return catchAsync(async (req, res, next) => {
     console.log('restrictedRoles: ', restrictedRoles);
     if (req?.user && restrictedRoles.includes(req.user.role)) {
-      req.user.isAuthorizedToDelete = true;
+      req.user.isAuthorized = true;
     } else {
-      req.authMessage = req?.user
-        ? 'User is not authorized to delete tour'
-        : req.authMessage;
+      req.authMessage = req?.user ? 'User is not authorized' : req.authMessage;
       req.statusCode = req?.user ? 403 : 401;
-      req.user.isAuthorizedToDelete = false;
+      req.user.isAuthorized = false;
     }
 
     next();

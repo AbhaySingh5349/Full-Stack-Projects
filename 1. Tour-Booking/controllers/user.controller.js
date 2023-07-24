@@ -64,7 +64,10 @@ const resetPassword = catchAsync(async (req, res) => {
 });
 
 const updatePassword = catchAsync(async (req, res) => {
-  const user = await userService.getUserById(req, req.user._id);
+  if (!req?.user) {
+    throw new apiError.APIErrorClass(401, req?.authMessage ?? 'error');
+  }
+  const user = await userService.getUserById(req.user._id);
 
   console.log('user found: ', user);
 

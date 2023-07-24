@@ -4,14 +4,17 @@ const router = express.Router();
 const apiError = require('../helpers/apiErrors');
 const errorMiddleware = require('../middlewares/error.middleware');
 
-const toursRoute = require('./tours.route');
-router.use('/tours', toursRoute);
+const toursRouter = require('./tours.route');
+router.use('/tours', toursRouter);
 
-const authRoute = require('./auth.route');
-router.use('/auth', authRoute);
+const authRouter = require('./auth.route');
+router.use('/auth', authRouter);
 
-const usersRoute = require('./user.route');
-router.use('/users', usersRoute);
+const usersRouter = require('./user.route');
+router.use('/users', usersRouter);
+
+const reviewsRouter = require('./review.route');
+router.use('/reviews', reviewsRouter);
 
 // if we are able to reach here means request-response cycle was not yet finsihed, so this is some invalid route
 router.all('*', (req, res, next) => {

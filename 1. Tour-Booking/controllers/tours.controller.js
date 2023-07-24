@@ -34,7 +34,7 @@ const updateTourWithId = catchAsync(async (req, res) => {
 });
 
 const deleteTourWithId = catchAsync(async (req, res) => {
-  if (!req?.user || !req.user?.isAuthorizedToDelete) {
+  if (!req?.user || !req.user?.isAuthorized) {
     throw new apiError.APIErrorClass(
       req?.statusCode ? req.statusCode : 401,
       req?.authMessage ?? 'error',
