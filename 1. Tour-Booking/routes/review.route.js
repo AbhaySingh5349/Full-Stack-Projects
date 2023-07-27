@@ -13,6 +13,17 @@ router
     reviewsController.addReview,
   );
 
-router.route('/:reviewId').delete(reviewsController.deleteReviewById);
+router
+  .route('/:reviewId')
+  .delete(
+    authMiddleware.verifyToken,
+    authMiddleware.verifyAuthorization('admin'),
+    reviewsController.deleteReviewById,
+  )
+  .patch(
+    authMiddleware.verifyToken,
+    authMiddleware.verifyAuthorization('user'),
+    reviewsController.updateReviewById,
+  );
 
 module.exports = router;

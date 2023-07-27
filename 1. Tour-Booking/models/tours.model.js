@@ -124,6 +124,10 @@ const tourSchema = mongoose.Schema(
   },
 );
 
+tourSchema.index({ duration: 1 });
+tourSchema.index({ slug: 1 });
+tourSchema.index({ startLocation: '2dsphere' });
+
 // fieLds which we can define on our schema but they will not be persisted in db (as they can be derived from one another)
 // we used regular func as => func do not have its own 'this' keyword
 tourSchema.virtual('durationWeeks').get(function () {
@@ -167,9 +171,21 @@ tourSchema.pre(/^find/, function (next) {
 
 // AGGREGATION MIDDLEWARE (this object points to aggregation object)
 tourSchema.pre('aggregate', function (next) {
-  this.pipeline().unshift({ $match: { secretTour: { $ne: true } } }); // hiding 'secret tour' in aggregation methods
+  // to avoid: $geoNear was not the first stage in the pipeline after optimization
 
-  console.log(this.pipeline());
+  /*  if (!(this.pipeline().length > 0 && '$geoNear' in this.pipeline()[0])) {
+    this.pipeline().unshift({ $match: { secretTour: { $ne: true } } }); // hiding 'secret tour' in aggregation methods
+  } */
+
+  if (
+    !Object.values(this.pipeline()).some((stage) =>
+      String(Object.keys(stage) === '$geoNear'),
+    )
+  ) {
+    this.pipeline().unshift({ $match: { secretTour: { $ne: true } } }); // hiding 'secret tour' in aggregation methods
+  }
+
+  console.log('aggregation pipeline: ', this.pipeline());
   next();
 });
 

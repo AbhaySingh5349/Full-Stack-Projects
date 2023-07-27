@@ -23,6 +23,21 @@ const addReview = async (reviewBody) => {
   };
 };
 
+const updateReviewById = async (id, reviewBody) => {
+  const review = await Review.findByIdAndUpdate(id, reviewBody, {
+    new: true, // returns updated object
+    runValidators: true,
+  });
+  if (!review) {
+    throw new apiError.APIErrorClass(404, `No review with id:${id} found`);
+  }
+  return {
+    status: 'success',
+    review,
+    message: `Review updated with id: ${id}`,
+  };
+};
+
 const deleteReviewById = async (id) => {
   const review = await Review.findByIdAndDelete(id);
   if (!review) {
@@ -33,5 +48,6 @@ const deleteReviewById = async (id) => {
 module.exports = {
   getAllReviews,
   addReview,
+  updateReviewById,
   deleteReviewById,
 };

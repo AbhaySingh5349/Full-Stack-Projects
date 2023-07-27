@@ -76,7 +76,7 @@ const verifyAuthorization = (...restrictedRoles) => {
     } else {
       req.authMessage = req?.user ? 'User is not authorized' : req.authMessage;
       req.statusCode = req?.user ? 403 : 401;
-      req.user.isAuthorized = false;
+      // req.user.isAuthorized = false;
     }
 
     next();

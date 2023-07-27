@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-const { Tour } = require('../../models');
+const { User, Tour, Review } = require('../../models');
 const mongoose = require('mongoose');
 
 const utils = require('../../helpers/utils');
@@ -20,13 +20,19 @@ mongoose
     console.log('error connecting db: ', err);
   });
 
+const usersData = JSON.parse(utils.readFileSync(`${__dirname}/users.json`));
+
 const toursData = JSON.parse(
   utils.readFileSync(`${__dirname}/tours-simple.json`),
 );
 
+const reviewsData = JSON.parse(utils.readFileSync(`${__dirname}/reviews.json`));
+
 const importDataToDB = async () => {
   try {
+    await User.create(usersData, { validateBeforeSave: false });
     await Tour.create(toursData);
+    await Review.create(reviewsData);
     console.log('imported tours data to db');
   } catch (err) {
     console.log('error in importing tours data to db: ', err);
@@ -36,7 +42,9 @@ const importDataToDB = async () => {
 
 const deleteDataFromCollection = async () => {
   try {
+    await User.deleteMany();
     await Tour.deleteMany();
+    await Review.deleteMany();
     console.log('data deleted');
   } catch (err) {
     console.log('error in deleting data: ', err);

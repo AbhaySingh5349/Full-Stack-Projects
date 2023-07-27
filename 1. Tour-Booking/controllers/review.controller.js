@@ -29,13 +29,28 @@ const addReview = catchAsync(async (req, res) => {
   return res.status(201).send(reviewObj);
 });
 
+const updateReviewById = catchAsync(async (req, res) => {
+  if (!req?.user || !req.user?.isAuthorized) {
+    throw new apiError.APIErrorClass(
+      req?.statusCode ? req.statusCode : 401,
+      req?.authMessage ?? 'error',
+    );
+  }
+  const reviewObj = await reviewService.updateReviewById(
+    String(req.params.reviewId),
+    req.body,
+  );
+
+  return res.status(200).send(reviewObj);
+});
+
 const deleteReviewById = catchAsync(async (req, res) => {
-  // if (!req?.user || !req.user?.isAuthorized) {
-  //   throw new apiError.APIErrorClass(
-  //     req?.statusCode ? req.statusCode : 401,
-  //     req?.authMessage ?? 'error',
-  //   );
-  // }
+  if (!req?.user || !req.user?.isAuthorized) {
+    throw new apiError.APIErrorClass(
+      req?.statusCode ? req.statusCode : 401,
+      req?.authMessage ?? 'error',
+    );
+  }
 
   await reviewService.deleteReviewById(String(req.params.reviewId));
 
@@ -45,5 +60,6 @@ const deleteReviewById = catchAsync(async (req, res) => {
 module.exports = {
   getAllReviews,
   addReview,
+  updateReviewById,
   deleteReviewById,
 };
