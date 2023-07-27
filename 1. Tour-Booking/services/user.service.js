@@ -3,9 +3,9 @@ const apiError = require('../helpers/apiErrors');
 const utils = require('../helpers/utils');
 
 const getAllUsers = async () => {
-  const users = await User.find({});
+  const users = await User.find();
   if (!users) {
-    throw new apiError.APIErrorClass(500, 'Failed to fetch all users');
+    throw new apiError.APIErrorClass(500, 'Failed to fetch users info');
   }
 
   return {

@@ -13,7 +13,7 @@ class APIFeatures {
     // ADVANCED FILTERING
     let queryStr = JSON.stringify(queryObj);
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`); // appending advanced queries with $
-    console.log('queryStr: ', JSON.parse(queryStr));
+    console.log('advancedQueryObj: ', JSON.parse(queryStr));
 
     this.query = this.model.find(JSON.parse(queryStr));
   }

@@ -12,6 +12,12 @@ const getAllUsers = catchAsync(async (req, res) => {
   return res.status(201).send(usersObj);
 });
 
+const getMyInfo = catchAsync(async (req, res) => {
+  const userObj = await userService.getUserById(req.user._id);
+
+  return res.status(201).send(userObj);
+});
+
 const forgotPassword = catchAsync(async (req, res) => {
   const user = await userService.getUserByEmail(req.body?.email);
   const resetToken = user.generateResetPasswordToken();
@@ -102,6 +108,7 @@ const deactivateAccount = catchAsync(async (req, res) => {
 
 module.exports = {
   getAllUsers,
+  getMyInfo,
   forgotPassword,
   resetPassword,
   updatePassword,
