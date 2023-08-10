@@ -15,7 +15,6 @@ const getAllUsers = async () => {
 };
 
 const getUserByEmail = async (email) => {
-  console.log('EMAIL: ', email);
   const user = await User.findOne({ email }).select('+password'); // since we need password with user object for validating against current i/p password
   if (!user) {
     throw new apiError.APIErrorClass(

@@ -8,7 +8,11 @@ const register = catchAsync(async (req, res) => {
   const userObj = await authService.createUser(req.body);
   const authObj = await tokenService.generateAuthTokens(userObj.user);
 
-  res.cookie('jwt_access_cookie', authObj.access.cookieOptions);
+  res.cookie(
+    'jwt_access_cookie',
+    authObj.access.token,
+    authObj.access.cookieOptions,
+  );
 
   return res.status(201).send({ userObj, authObj });
 });
@@ -19,6 +23,12 @@ const login = catchAsync(async (req, res) => {
     req.body.password,
   );
   const authObj = await tokenService.generateAuthTokens(userObj.user);
+
+  res.cookie(
+    'jwt_access_cookie',
+    authObj.access.token,
+    authObj.access.cookieOptions,
+  );
 
   return res.status(200).send({ userObj, authObj });
 });

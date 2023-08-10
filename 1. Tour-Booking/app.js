@@ -5,15 +5,43 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const path = require('path');
+let cors = require('cors');
+const cookieParser = require('cookie-parser');
 
 const app = express(); // initialize application
-const routes = require('./routes');
+
+// serving static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.set('view engine', 'pug'); // pug us whitespace sensitive syntax for writing html (to write elements, we need name & indentation)
+app.set('views', path.join(__dirname, 'views')); // pug templates are called 'views'
 
 const config = require('./config/config');
 
 // GLOBAL MIDDLEWARES
 
 app.use(helmet()); // setting HTTP security headers
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      baseUri: ["'self'"],
+      fontSrc: ["'self'", 'https:', 'data:'],
+      scriptSrc: [
+        "'self'",
+        'https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js',
+      ],
+      objectSrc: ["'none'"],
+      styleSrc: ["'self'", 'https:', 'unsafe-inline'],
+      upgradeInsecureRequests: [],
+    },
+  }),
+);
+
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+
+app.use(cookieParser());
 
 if (config.node_env === 'development') {
   app.use(morgan('dev')); // development logging
@@ -54,23 +82,23 @@ app.use(
   }),
 );
 
-// serving static files
-app.use(express.static(`${__dirname}/public`));
-
 // test middleware
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
+  console.log('cookies: ', req.cookies);
+  // console.log('cookies: ', document.cookie);
   next();
 });
 
 // localhost:3000/
-app.get('/', (req, res) => {
+app.get('/app', (req, res) => {
   res.status(200).json({
     message: 'wellcome to toor booking api',
     app: 'Tour Booking Web App',
   });
 });
 
+const routes = require('./routes');
 app.use('/', routes);
 
 module.exports = app;
