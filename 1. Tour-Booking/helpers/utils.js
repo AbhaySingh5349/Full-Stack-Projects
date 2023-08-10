@@ -16,9 +16,7 @@ const generateBaseURL = (req) => {
 };
 
 const generateURL = (req) => {
-  const url = req.originalUrl;
-
-  return generateBaseURL + `${url}`;
+  return generateBaseURL + `${req.originalUrl}`;
 };
 
 const fiteredObject = (obj, ...allowedFeilds) => {

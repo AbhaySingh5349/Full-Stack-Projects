@@ -16,6 +16,9 @@ router.use('/users', usersRouter);
 const reviewsRouter = require('./review.route');
 router.use('/reviews', reviewsRouter);
 
+const viewsRouter = require('./views.route');
+router.use('/', viewsRouter);
+
 // if we are able to reach here means request-response cycle was not yet finsihed, so this is some invalid route
 router.all('*', (req, res, next) => {
   // if 'next' func. receives any arguement, express interpret it as error, skips all middlewares in stack & send error to global error handling middleware

@@ -1,5 +1,6 @@
 [
   {
+    "_id": "5c88fa8cf4afda39709c2951",
     "name": "The Forest Hiker",
     "duration": 5,
     "maxGroupSize": 25,
@@ -11,6 +12,7 @@
     "charges": {
       "price": 397
     },
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a1f4e2f8fb814b56fa185"],
     "summary": "Breathtaking hike through the Canadian Banff National Park",
     "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "imageCover": "tour-1-cover.jpg",
@@ -47,6 +49,7 @@
     ]
   },
   {
+    "_id": "5c88fa8cf4afda39709c2955",
     "name": "The Sea Explorer",
     "duration": 7,
     "maxGroupSize": 15,
@@ -58,6 +61,11 @@
     "charges": {
       "price": 497
     },
+    "guides": [
+      "5c8a21d02f8fb814b56fa189",
+      "5c8a201e2f8fb814b56fa186",
+      "5c8a1f292f8fb814b56fa184"
+    ],
     "summary": "Exploring the jaw-dropping US east coast by foot and by boat",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "tour-2-cover.jpg",
@@ -101,6 +109,7 @@
     ]
   },
   {
+    "_id": "5c88fa8cf4afda39709c295a",
     "name": "The Snow Adventurer",
     "duration": 4,
     "maxGroupSize": 10,
@@ -112,6 +121,11 @@
     "charges": {
       "price": 997
     },
+    "guides": [
+      "5c8a21d02f8fb814b56fa189",
+      "5c8a23412f8fb814b56fa18c",
+      "5c8a1f4e2f8fb814b56fa185"
+    ],
     "summary": "Exciting adventure in the snow with snowboarding and skiing",
     "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!\nDolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipisicing elit!",
     "imageCover": "tour-3-cover.jpg",
@@ -141,6 +155,7 @@
     ]
   },
   {
+    "_id": "5c88fa8cf4afda39709c295d",
     "name": "The City Wanderer",
     "duration": 9,
     "maxGroupSize": 20,
@@ -152,6 +167,11 @@
     "charges": {
       "price": 1197
     },
+    "guides": [
+      "5c8a21f22f8fb814b56fa18a",
+      "5c8a23412f8fb814b56fa18c",
+      "5c8a201e2f8fb814b56fa186"
+    ],
     "summary": "Living the life of Wanderlust in the US' most beatiful cities",
     "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat lorem ipsum dolor sit amet.\nConsectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat!",
     "imageCover": "tour-4-cover.jpg",
@@ -188,6 +208,7 @@
     ]
   },
   {
+    "_id": "5c88fa8cf4afda39709c2961",
     "name": "The Park Camper",
     "duration": 10,
     "maxGroupSize": 15,
@@ -199,6 +220,7 @@
     "charges": {
       "price": 1497
     },
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a201e2f8fb814b56fa186"],
     "summary": "Breathing in Nature in America's most spectacular National Parks",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!",
     "imageCover": "tour-5-cover.jpg",
@@ -242,6 +264,7 @@
     ]
   },
   {
+    "_id": "5c88fa8cf4afda39709c2966",
     "name": "The Sports Lover",
     "duration": 14,
     "maxGroupSize": 8,
@@ -253,6 +276,11 @@
     "charges": {
       "price": 2997
     },
+    "guides": [
+      "5c8a21f22f8fb814b56fa18a",
+      "5c8a1f292f8fb814b56fa184",
+      "5c8a1f4e2f8fb814b56fa185"
+    ],
     "summary": "Surfing, skating, parajumping, rock climbing and more, all in one tour",
     "description": "Nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.\nVoluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur!",
     "imageCover": "tour-6-cover.jpg",
@@ -303,6 +331,7 @@
     ]
   },
   {
+    "_id": "5c88fa8cf4afda39709c296c",
     "name": "The Wine Taster",
     "duration": 5,
     "maxGroupSize": 8,
@@ -314,6 +343,7 @@
     "charges": {
       "price": 1997
     },
+    "guides": ["5c8a21d02f8fb814b56fa189", "5c8a1f292f8fb814b56fa184"],
     "summary": "Exquisite wines, scenic views, exclusive barrel tastings,  and much more",
     "description": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nIrure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     "imageCover": "tour-7-cover.jpg",
@@ -350,6 +380,7 @@
     ]
   },
   {
+    "_id": "5c88fa8cf4afda39709c2970",
     "name": "The Star Gazer",
     "duration": 9,
     "maxGroupSize": 8,
@@ -361,6 +392,11 @@
     "charges": {
       "price": 2997
     },
+    "guides": [
+      "5c8a21f22f8fb814b56fa18a",
+      "5c8a201e2f8fb814b56fa186",
+      "5c8a23412f8fb814b56fa18c"
+    ],
     "summary": "The most remote and stunningly beautiful places for seeing the night sky",
     "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     "imageCover": "tour-8-cover.jpg",
@@ -397,6 +433,7 @@
     ]
   },
   {
+    "_id": "5c88fa8cf4afda39709c2974",
     "name": "The Northern Lights",
     "duration": 3,
     "maxGroupSize": 12,
@@ -408,6 +445,7 @@
     "charges": {
       "price": 1497
     },
+    "guides": ["5c8a22c62f8fb814b56fa18b", "5c8a23412f8fb814b56fa18c"],
     "summary": "Enjoy the Northern Lights in one of the best places in the world",
     "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum!\nDolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur, exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipisicing elit!",
     "imageCover": "tour-9-cover.jpg",

@@ -1,7 +1,6 @@
 const tourService = require('../services/tours.service');
 const catchAsync = require('../helpers/catchAsync');
 const apiError = require('../helpers/apiErrors');
-const { Tour } = require('../models');
 
 const fetchAllTours = catchAsync(async (req, res) => {
   console.log('req.query: ', req.query);
