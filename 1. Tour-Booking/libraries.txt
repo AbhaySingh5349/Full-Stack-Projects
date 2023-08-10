@@ -1,0 +1,28 @@
+npm install --save express
+npm install --sace-dev nodemon
+npm install --save path
+npm install --save dotenv
+npm install --save-dev  eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react
+npm install --save mongoose
+node .\dev-data\data\import-dev-data-json.js --import //  import data from cmd line
+node .\dev-data\data\import-dev-data-json.js --delete // to delete data from cmd line
+npm install --save slugify
+npm install --save validator
+npm install ndb --global (add debug script and use npm run debug)
+npm install -g win-node-env (to be able to set node env as prod in script & run prod script in package.json)
+npm install --save bcrypt
+npm install --save validator
+npm install --save jsonwebtoken
+npm install --save nodemailer
+npm install --save express-rate-limit
+npm install --save helmet
+npm install --save express-mongo-sanitize
+npm install --save xss-clean
+npm install --save hpp
+
+npm install --save pug
+npm install --save mapbox-gl
+npm install --save cors
+npm install --save cookie-parser
+
+mongosh "mongodb+srv://cluster0.epz8qwr.mongodb.net/" --apiVersion 1 --username abhay5349singh
