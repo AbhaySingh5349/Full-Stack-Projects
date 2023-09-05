@@ -1,0 +1,3 @@
+npm create vite@latest client -- --template react
+npm install --save styled-components
+npm install --save react-icons
