@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Wrapper = styled.section`
   margin-top: 4rem;
@@ -10,6 +10,7 @@ const Wrapper = styled.section`
     margin-bottom: 1.5rem;
   }
   .jobs {
+    /* height: 40rem; */
     display: grid;
     grid-template-columns: 1fr;
     row-gap: 2rem;

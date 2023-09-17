@@ -7,6 +7,7 @@ import NavLinks from "./NavLinks";
 
 const SmallSideBar = () => {
   const { showSideBar, toggleSideBar } = useDashboardContext();
+  // console.log("showSideBar: ", showSideBar);
 
   return (
     <Wrapper>
