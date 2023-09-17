@@ -1,3 +1,23 @@
 npm create vite@latest client -- --template react
 npm install --save styled-components
 npm install --save react-icons
+
+npm install --sace-dev nodemon
+npm install --save express
+npm install --save path
+npm install --save dotenv
+npm install --save cookie-parser
+npm install --save morgan
+npm install --save nanoid
+npm install --save mongoose
+npm install --save express-async-errors
+npm install --save http-status-codes
+npm install --save express-validator
+npm install --save bcrypt
+npm install --save jsonwebtoken
+npm install --save cookie-parser
+npm install --save cors
+npm install --save concurrently
+npm install --save axios
+npm install --save react-tostify
+npm install --save dayjs

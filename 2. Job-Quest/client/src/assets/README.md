@@ -1152,7 +1152,7 @@ import links from '../utils/links';
 import { useDashboardContext } from '../pages/DashboardLayout';
 
 const SmallSidebar = () => {
-  const { showSidebar, toggleSidebar } = useDashboardContext();
+  const { {showSidebars}, toggleSidebar } = useDashboardContext();
   return (
     <Wrapper>
       <div
