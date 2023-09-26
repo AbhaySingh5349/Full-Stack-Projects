@@ -2,7 +2,7 @@ npm create vite@latest client -- --template react
 npm install --save styled-components
 npm install --save react-icons
 
-npm install --sace-dev nodemon
+npm install --save-dev nodemon
 npm install --save express
 npm install --save path
 npm install --save dotenv

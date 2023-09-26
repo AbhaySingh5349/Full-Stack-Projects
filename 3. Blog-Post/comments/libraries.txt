@@ -1,0 +1,5 @@
+npm install --save-dev nodemon
+npm install --save express
+npm install --save cors
+npm install --save axios
+npm install --save cors
