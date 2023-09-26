@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: posts-srv
+spec: # customize how service will behave
+  type: NodePort
+  selector:
+    app: posts # telling service to find all pods with label "app posts" (in deploymemt config)
+  ports: # list of ports that we want to expose on target pod
+    - name: posts # for logging purposes (can be anything)
+      protocol: TCP
+      port: 4000 # port of node service where we send traffic to and internally redirects to "taegetPort" on container
+      targetPort: 4000 # port that we want to direct traffic to i.e port our app is listening on
