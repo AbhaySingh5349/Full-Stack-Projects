@@ -35,4 +35,13 @@ const validateRegisterInput = withValidationErrors([
     .withMessage('password must be at least 2 characters long'),
 ]);
 
-export { withValidationErrors, validateRegisterInput };
+const validateLoginInput = withValidationErrors([
+  body('email')
+    .notEmpty()
+    .withMessage('email is required')
+    .isEmail()
+    .withMessage('invalid email format'),
+  body('password').trim().notEmpty().withMessage('password is required'),
+]);
+
+export { withValidationErrors, validateRegisterInput, validateLoginInput };

@@ -3,3 +3,6 @@ npm install --save express @types/express
 tsc --init
 npm install --save express-validator
 npm install --save express-async-errors
+npm install --save mongoose @types/mongoose
+npm install --save cookie-session @types/cookie-session
+npm install --save jsonwebtoken @types/jsonwebtoken
