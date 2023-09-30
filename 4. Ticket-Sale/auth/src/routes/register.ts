@@ -21,7 +21,7 @@ router
     // generate JWT
     const token = createJWT({ id: user.id, email });
 
-    // store JWT on session object (it got turned into JSON and then base 64 encoded)
+    // store JWT on session object (it got turned into JSON and then base 64 encoded string by cookie session)
     req.session = {
       jwt: token,
     };
