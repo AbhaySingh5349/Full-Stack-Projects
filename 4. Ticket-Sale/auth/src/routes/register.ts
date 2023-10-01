@@ -1,9 +1,11 @@
 import express, { Request, Response } from 'express';
 
-import { createJWT } from '../services/token';
-import { validateRegisterInput } from '../middlewares/validation-middleware';
 import { User } from '../models/user-model';
-import { BadRequestError } from '../errors/bad-req-errors';
+import {
+  createJWT,
+  validateRegisterInput,
+  BadRequestError,
+} from '@abticketsale/common';
 
 const router = express.Router();
 

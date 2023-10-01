@@ -8,3 +8,5 @@ npm install --save cookie-session @types/cookie-session
 npm install --save jsonwebtoken @types/jsonwebtoken
 npm install --save-dev @types/jest @types/supertest jest ts-jest supertest
 npm install --save-dev mongodb-memory-server (for testing multiple db at same time)
+
+npm install @abticketsale/common

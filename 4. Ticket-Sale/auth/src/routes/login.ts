@@ -1,10 +1,9 @@
 import express, { Request, Response } from 'express';
 
-import { createJWT } from '../services/token';
-import { validateLoginInput } from '../middlewares/validation-middleware';
+import { createJWT } from '@abticketsale/common';
+import { validateLoginInput } from '@abticketsale/common';
 import { User } from '../models/user-model';
-import { BadRequestError } from '../errors/bad-req-errors';
-import { PasswordManager } from '../services/password-manager';
+import { BadRequestError, PasswordManager } from '@abticketsale/common';
 
 const router = express.Router();
 

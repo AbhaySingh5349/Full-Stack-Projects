@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { PasswordManager } from '../services/password-manager';
+import { PasswordManager } from '@abticketsale/common';
 
 // interface to describe properties required to create new user
 interface UserAttributes {
