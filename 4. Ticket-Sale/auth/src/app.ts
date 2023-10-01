@@ -6,8 +6,7 @@ import { registerRouter } from './routes/register';
 import { loginRouter } from './routes/login';
 import { logoutRouter } from './routes/logout';
 import { currentUserRouter } from './routes/current-user';
-import { errorHandler } from './middlewares/error-middleware';
-import { NotFoundError } from './errors/not-found-errors';
+import { errorHandler, NotFoundError } from '@abticketsale/common';
 
 const app = express();
 app.set('trust proxy', true); // traffic is proxied through ingress-nginx, so express needs to trust this HTTPS proxy
