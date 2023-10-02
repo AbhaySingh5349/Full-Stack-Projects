@@ -16,7 +16,7 @@ interface UserDoc extends mongoose.Document {
 }
 
 // interface to describe properties that User model has
-interface UserModelAttributes extends mongoose.Model<any> {
+interface UserModelAttributes extends mongoose.Model<UserDoc> {
   build(attributes: UserAttributes): UserDoc;
 }
 
