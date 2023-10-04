@@ -1,0 +1,6 @@
+npm install --save typescript ts-node-dev
+npm install --save @types/node
+npm install node-nats-streaming
+tsc --init
+
+npm install @abticketsale/common
